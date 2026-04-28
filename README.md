@@ -23,4 +23,4 @@ This project automatically screens resumes using skill matching.
 5. Candidate is selected or rejected
 
 ## Author
-uma
+UMA
