@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Selected Candidates</title>
+
+    <style>
+        body { font-family: Arial; background: #f5f5f5; }
+        .container { width: 80%; margin: auto; }
+        .card {
+            background: white;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 10px;
+        }
+        .btn {
+            padding: 8px 15px;
+            background: green;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+<div class="container">
+
+<h1>Selected Candidates</h1>
+
+<a href="/">← Back to Jobs</a>
+
+{% for app in applications %}
+<div class="card">
+    <h3>{{ app.name }}</h3>
+    <p>Email: {{ app.email }}</p>
+    <p>Job: {{ app.job.title }}</p>
+    <p>Score: {{ app.score }}</p>
+
+    <a href="{{ app.resume.url }}" class="btn" target="_blank">
+        Download Resume
+    </a>
+</div>
+{% empty %}
+<p>No selected candidates</p>
+{% endfor %}
+
+</div>
+</body>
+</html>
